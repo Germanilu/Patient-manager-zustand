@@ -6,6 +6,7 @@ import type { DraftPatient, Patient } from './types';
 type PatientState = {
     patients: Patient[],
     addPatient:(data:DraftPatient) => void
+    deletePatient: (id:Patient['id']) => void
 }
 
 //Esta funcion transforma un DraftPatient (Sin ID) en un Patient completo agregandole un ID con uuidv4
@@ -18,13 +19,19 @@ const createPatient = (patient:DraftPatient):Patient => {
 
 //Creo y exporto un hook personalizado usePatientStore para modificar/leer el estado en todos los componentes
 export const usePatientStore = create<PatientState>((set) => ({
-    
+
     patients: [],
     
     addPatient: (data) => {
         const newPatient = createPatient(data)
         set((state) => ({
             patients:[...state.patients, newPatient]
+        }))
+    },
+
+    deletePatient: (id) => {
+        set((state) => ({
+            patients: state.patients.filter(patient => patient.id !== id)
         }))
     }
 }))
