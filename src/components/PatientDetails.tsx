@@ -1,4 +1,5 @@
 import type { Patient } from "../types"
+import {toast} from 'react-toastify'
 import PatientDetailItem from "./PatientDetailItem"
 import { usePatientStore } from "../store"
 
@@ -6,11 +7,23 @@ type PatientDetailsProps = {
     patient: Patient
 }
 
+/**
+ * 
+ * @component <PatientDetails/> Show Patient Details Tab 
+ * @props patient {caretaker:string, date:string, email:string, id:string, name:string, symptoms:string}
+ * @returns
+ */
 export default function PatientDetails({patient}:PatientDetailsProps) {
 
-    //Estas son 2 formas de acceder al estado global Ambas Valen
+    ////Estado Zustand: Estas son 2 formas de acceder al estado global Ambas Valen
     const deletePatient = usePatientStore((state) => state.deletePatient);
     const {getPatientById} = usePatientStore();
+
+    const handleClick = () => {
+        console.log(patient,'aaaaqui')
+        deletePatient(patient.id)
+        toast('Paciente Eliminado',{type:'error'})
+    }
 
 
   return (
@@ -34,7 +47,7 @@ export default function PatientDetails({patient}:PatientDetailsProps) {
         <button
             type="button"
             className="p-2 px-10 bg-red-600 hover:bg-red-700 text-white font-bold uppercase rounded-lg"
-            onClick={() => deletePatient(patient.id)}
+            onClick={handleClick}
         >
             Eliminar
         </button>
