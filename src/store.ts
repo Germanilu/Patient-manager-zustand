@@ -1,7 +1,7 @@
 
 import { create } from 'zustand';
 //devtools: Necesario para ver zustand en Redux Devtools / persist: Necesario para estado persistente
-import { createJSONStorage, devtools, persist } from 'zustand/middleware'
+import { devtools, persist } from 'zustand/middleware'
 import { v4 as uuidv4 } from 'uuid'
 import type { DraftPatient, Patient } from './types';
 
@@ -23,6 +23,7 @@ const createPatient = (patient: DraftPatient): Patient => {
 }
 
 //Creo y exporto un hook personalizado usePatientStore para modificar/leer el estado en todos los componentes
+//En su interior tengo todo el control del estado con las funciones para modificarlo y persist para mantener persistente el estado
 export const usePatientStore = create<PatientState>()(
   devtools(
     persist((set) => ({

@@ -1,4 +1,12 @@
 
+/**
+ * 
+ * @component <Error/>
+ * @param {Object} props - React props
+ * @example <Error>There was a problem processing your request.</Error>
+ * @returns {JSX.Element} A styled error message paragraph
+ */
+
 export default function Error({children}:{children:React.ReactNode}) {
     
   return (

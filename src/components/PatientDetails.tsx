@@ -15,12 +15,12 @@ type PatientDetailsProps = {
  */
 export default function PatientDetails({patient}:PatientDetailsProps) {
 
-    ////Estado Zustand: Estas son 2 formas de acceder al estado global Ambas Valen
+    //Estado Zustand: Estas son 2 formas de acceder al estado global Ambas Valen
     const deletePatient = usePatientStore((state) => state.deletePatient);
     const {getPatientById} = usePatientStore();
 
+    //Funciones
     const handleClick = () => {
-        console.log(patient,'aaaaqui')
         deletePatient(patient.id)
         toast('Paciente Eliminado',{type:'error'})
     }

@@ -1,13 +1,18 @@
 🩺 Patient Manager  
-A modern patient management app built with React, TypeScript, Vite, and Zustand for state management.
+A modern and fully responsive patient management application built with **React**, **TypeScript**, and **Vite**.  
+State is managed globally using **Zustand**, with form handling powered by **React Hook Form**, and styled elegantly using **Tailwind CSS**.
 
 🚀 Features  
-- Add, edit, and delete patient records.  
-- Display detailed information for each patient.  
-- Global state management using Zustand.  
-- Form handling and validation with React Hook Form.  
-- Styled using Tailwind CSS.  
-- Clean, responsive, and accessible UI built with React Hooks.  
+- ✅ Add new patients via a validated form
+- ✏️ Edit existing patient data
+- ❌ Delete patient records from the global store
+- 📋 Display a detailed view for each patient (name, caretaker, email, date, symptoms)
+- 🧠 Global state management with **Zustand**
+- 📝 Form validation and error handling with **React Hook Form**
+- 📦 Toast notifications for feedback on form submissions
+- 🎨 Styled using **Tailwind CSS**
+- 🧩 Built with reusable components (`<Error />`, `<PatientDetailItem />`, etc.)
+- ⚡ Instant reactivity using **React Hooks** like `useState`, `useEffect`, and `useForm`
 
 🧱 Tech Stack  
 ⚛️ React  
@@ -16,7 +21,7 @@ A modern patient management app built with React, TypeScript, Vite, and Zustand 
 🧠 Zustand  
 📋 React Hook Form  
 🎨 Tailwind CSS  
-🔁 React Hooks (useState, useEffect)
+🔁 React Hooks
 
 📦 Installation  
 Clone the repository and run the following commands:
